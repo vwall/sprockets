@@ -42,7 +42,10 @@ module Sprockets
       options = {
         filename: input[:filename],
         syntax: self.class.syntax,
-        cache_store: CacheStore.new(input[:cache], @cache_version),
+        #cache_store: CacheStore.new(input[:cache], @cache_version),
+
+        :cache => false,
+        :read_cache => false,
         load_paths: input[:environment].paths,
         sprockets: {
           context: context,
